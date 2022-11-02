@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        background: black;
+        height: 100vh;
+        position: relative;
+      }
+
+      .box {
+        display: grid;
+        place-content: center;
+        height: 100vh;
+        width: 100%;
+        border: 2px solid white;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      h1 {
+        font-size: 3rem;
+        color: white;
+        font-weight: 400;
+      }
+
+      .heading-primary {
+        animation: moveFromLeft 2s;
+        margin-bottom: 0.5rem;
+      }
+
+      .heading-secondary {
+        animation: moveFromRight 2s ease-in-out;
+      }
+
+      button {
+        margin-top: 3rem;
+        background: black;
+        color: white;
+        border: 2px solid white;
+        outline: none;
+        font-weight: bold;
+        padding: 1rem 2rem;
+        cursor: pointer;
+        animation: moveFromBottom 1s ease-in-out 1s forwards;
+        opacity: 0;
+        transition: 1s;
+        justify-self: center;
+      }
+
+      button:hover {
+        background-color: white;
+        color: black;
+      }
+
+      @keyframes moveFromLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-100px);
+        }
+
+        80% {
+          transform: translate(10px);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes moveFromRight {
+        from {
+          opacity: 0;
+          transform: translateX(100px);
+        }
+
+        80% {
+          transform: translate(-10px);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes moveFromBottom {
+        from {
+          transform: translateY(100px);
+        }
+
+        80% {
+          transform: translateY(-5px);
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1 class="heading-primary">HELLO WORLD!</h1>
+      <h1 class="heading-secondary">WELCOME TO CSS</h1>
+      <button>LEARN TODAY</button>
+    </div>
+  </body>
+</html>
